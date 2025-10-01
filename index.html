@@ -1,0 +1,282 @@
+```html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Zoom — Business Model Canvas (Simple English)</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #0e1524;
+      --card: #101a2c;
+      --muted:#9aa4b2;
+      --accent:#3b82f6;
+      --glass: rgba(255,255,255,0.03);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%;width:100%;overflow-x:hidden}
+    body{
+      background: linear-gradient(180deg,#071029 0%, #0b1630 60%);
+      color:#e6eef6;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      -webkit-font-smoothing:antialiased;
+      line-height:1.5;
+      min-height:100vh;
+      padding:12px;
+    }
+    .container{max-width:1100px;margin:18px auto;padding:12px}
+    header{
+      display:flex;gap:14px;align-items:center;background:var(--card);padding:16px;border-radius:12px;
+      box-shadow:0 6px 24px rgba(0,0,0,0.5);
+      flex-direction:column;text-align:center;
+    }
+    @media(min-width:600px){
+      header{flex-direction:row;text-align:left;padding:20px;border-radius:16px}
+    }
+    .logo{
+      width:72px;height:72px;border-radius:12px;
+      background:linear-gradient(135deg,var(--accent),#2563eb);
+      display:flex;align-items:center;justify-content:center;
+      font-weight:800;color:#fff;font-size:32px;flex-shrink:0;
+      box-shadow:0 6px 20px rgba(59,130,246,0.2);
+    }
+    .title h1{font-size:20px;margin-bottom:6px}
+    .title p{color:var(--muted);font-size:13px;margin-top:2px}
+
+    /* Layout: top grid similar to canvas but as presentation cards */
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:16px;
+      margin-top:16px;
+    }
+    @media(min-width:900px){
+      .grid{
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: minmax(160px, auto);
+      }
+    }
+
+    .card{
+      background:var(--card);padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);
+      box-shadow:0 6px 20px rgba(0,0,0,0.45);
+      overflow:hidden;
+    }
+    .card h2{margin-bottom:8px;font-size:16px}
+    .muted{color:var(--muted);font-size:13px}
+    .card .icon{
+      position:absolute;right:18px;top:14px;opacity:0.9;
+    }
+    .card-wrap{position:relative}
+
+    /* Big central value card spans both columns on wide screens */
+    .value{
+      grid-column:1 / -1;
+    }
+
+    ul.simple{padding-left:18px;margin-top:8px}
+    ul.simple li{margin-bottom:8px}
+
+    .image-hero{
+      width:100%;height:auto;border-radius:10px;margin-top:12px;border:1px solid rgba(255,255,255,0.04);
+    }
+
+    .footer-note{color:var(--muted);font-size:12px;text-align:center;margin-top:16px}
+
+    /* Presentation controls */
+    .controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .btn{
+      background:linear-gradient(90deg,var(--accent),#2563eb);color:#fff;padding:10px 14px;border-radius:10px;
+      font-weight:700;border:none;cursor:pointer;text-decoration:none;display:inline-block;
+      box-shadow:0 6px 18px rgba(59,130,246,0.18)
+    }
+    .small-pic{width:40px;height:40px;border-radius:8px;object-fit:cover;border:1px solid rgba(255,255,255,0.04)}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">Z</div>
+      <div class="title">
+        <h1>Zoom — Business Model Canvas (Simple English)</h1>
+        <p class="muted">Short and clear slides about Zoom's business model. Images and simple English.</p>
+      </div>
+    </header>
+
+    <!-- Hero image (provided by user) -->
+    <div style="margin-top:14px">
+      <!-- the developer provided image path: /mnt/data/ingles.jpeg -->
+      <img src="/mnt/data/ingles.jpeg" alt="Business Model Canvas" class="image-hero" />
+    </div>
+
+    <!-- Grid of cards (presentation style) -->
+    <div class="grid">
+
+      <!-- Key Partnerships -->
+      <div class="card card-wrap">
+        <h2>Key Partnerships</h2>
+        <svg class="icon" width="34" height="34" viewBox="0 0 24 24" fill="none" aria-hidden>
+          <path d="M4 12c0-1.657 1.343-3 3-3h4" stroke="#9aa4b2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M20 12c0 1.657-1.343 3-3 3h-4" stroke="#9aa4b2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="7" cy="9" r="1.6" fill="#9aa4b2"/>
+          <circle cx="17" cy="15" r="1.6" fill="#9aa4b2"/>
+        </svg>
+        <p class="muted">Zoom works with partners to keep service reliable and fast.</p>
+        <ul class="simple muted">
+          <li>Cloud providers (data centers)</li>
+          <li>Hardware makers (cameras, microphones)</li>
+          <li>Integration partners (Slack, Microsoft)</li>
+          <li>Security & compliance vendors</li>
+        </ul>
+      </div>
+
+      <!-- Key Activities -->
+      <div class="card card-wrap">
+        <h2>Key Activities</h2>
+        <svg class="icon" width="34" height="34" viewBox="0 0 24 24" fill="none">
+          <path d="M3 12h18" stroke="#9aa4b2" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M12 3v18" stroke="#9aa4b2" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <p class="muted">Main things Zoom does every day.</p>
+        <ul class="simple muted">
+          <li>Run and improve video conferencing platform</li>
+          <li>Keep servers and networks fast</li>
+          <li>Update apps and add features</li>
+          <li>Support customers and security</li>
+        </ul>
+      </div>
+
+      <!-- Key Resources -->
+      <div class="card card-wrap">
+        <h2>Key Resources</h2>
+        <svg class="icon" width="34" height="34" viewBox="0 0 24 24" fill="none">
+          <rect x="3" y="6" width="18" height="12" rx="2" stroke="#9aa4b2" stroke-width="1.6"/>
+          <circle cx="12" cy="12" r="2" fill="#9aa4b2"/>
+        </svg>
+        <p class="muted">What Zoom needs to run the product.</p>
+        <ul class="simple muted">
+          <li>Global server network (cloud)</li>
+          <li>Skilled engineers and support team</li>
+          <li>Software code and patents</li>
+          <li>Brand and large user base</li>
+        </ul>
+      </div>
+
+      <!-- Value Propositions (central, spans columns) -->
+      <div class="card value card-wrap">
+        <h2>Value Propositions</h2>
+        <svg class="icon" width="34" height="34" viewBox="0 0 24 24" fill="none">
+          <path d="M12 3v18" stroke="#9aa4b2" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M3 12h18" stroke="#9aa4b2" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <p class="muted">Simple reasons customers choose Zoom.</p>
+        <ul class="simple muted">
+          <li>Easy to use video calls and meetings</li>
+          <li>Works on many devices (phone, PC, tablet)</li>
+          <li>Good quality even on slow internet</li>
+          <li>Free basic plan and paid plans for businesses</li>
+          <li>Integrations with other work tools</li>
+        </ul>
+      </div>
+
+      <!-- Customer Relationships -->
+      <div class="card card-wrap">
+        <h2>Customer Relationships</h2>
+        <svg class="icon" width="34" height="34" viewBox="0 0 24 24" fill="none">
+          <path d="M12 5a3 3 0 0 1 0 6 3 3 0 0 1 0-6z" stroke="#9aa4b2" stroke-width="1.6"/>
+          <path d="M5 19a7 7 0 0 1 14 0" stroke="#9aa4b2" stroke-width="1.6"/>
+        </svg>
+        <p class="muted">How Zoom connects with users.</p>
+        <ul class="simple muted">
+          <li>Self-service (easy sign up)</li>
+          <li>Online help and tutorials</li>
+          <li>Business support plans</li>
+          <li>Community and developer resources</li>
+        </ul>
+      </div>
+
+      <!-- Channels -->
+      <div class="card card-wrap">
+        <h2>Channels</h2>
+        <svg class="icon" width="34" height="34" viewBox="0 0 24 24" fill="none">
+          <path d="M3 7h18v10H3z" stroke="#9aa4b2" stroke-width="1.6" stroke-linejoin="round"/>
+          <path d="M8 12h8" stroke="#9aa4b2" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <p class="muted">Ways users get Zoom.</p>
+        <ul class="simple muted">
+          <li>Zoom website (download apps)</li>
+          <li>App stores (iOS, Android)</li>
+          <li>Business sales & resellers</li>
+          <li>Integrations inside other apps</li>
+        </ul>
+      </div>
+
+      <!-- Customer Segments -->
+      <div class="card card-wrap">
+        <h2>Customer Segments</h2>
+        <svg class="icon" width="34" height="34" viewBox="0 0 24 24" fill="none">
+          <circle cx="8" cy="10" r="2" stroke="#9aa4b2" stroke-width="1.6"/>
+          <circle cx="16" cy="14" r="2" stroke="#9aa4b2" stroke-width="1.6"/>
+        </svg>
+        <p class="muted">Who uses Zoom?</p>
+        <ul class="simple muted">
+          <li>Individual users (friends, families)</li>
+          <li>Small businesses and teams</li>
+          <li>Large enterprises and schools</li>
+          <li>Developers and integrators</li>
+        </ul>
+      </div>
+
+      <!-- Cost Structure (wide bottom) -->
+      <div class="card card-wrap" style="grid-column:1/-1;">
+        <h2>Cost Structure</h2>
+        <svg class="icon" width="34" height="34" viewBox="0 0 24 24" fill="none">
+          <path d="M6 12h12" stroke="#9aa4b2" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M12 6v12" stroke="#9aa4b2" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <p class="muted">Main costs for Zoom to run the service.</p>
+        <ul class="simple muted">
+          <li>Server and cloud costs</li>
+          <li>Engineering and product teams</li>
+          <li>Customer support and sales</li>
+          <li>Marketing and security/compliance</li>
+        </ul>
+      </div>
+
+      <!-- Revenue Streams (also wide bottom) -->
+      <div class="card card-wrap" style="grid-column:1/-1;">
+        <h2>Revenue Streams</h2>
+        <svg class="icon" width="34" height="34" viewBox="0 0 24 24" fill="none">
+          <path d="M12 3v18" stroke="#9aa4b2" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M6 8h12" stroke="#9aa4b2" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <p class="muted">How Zoom makes money.</p>
+        <ul class="simple muted">
+          <li>Paid subscriptions (Pro, Business, Enterprise)</li>
+          <li>Zoom Phone and add-on services</li>
+          <li>Hardware sales and certified partners</li>
+          <li>Marketplace integrations and platform fees</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="controls">
+      <a class="btn" href="https://zoom.us" target="_blank" rel="noopener">Visit Zoom (official)</a>
+      <a class="btn" href="#" onclick="alert('This is a demo presentation. Use print or save as PDF.');return false;">Save as PDF (browser)</a>
+      <div style="margin-left:auto;display:flex;align-items:center;gap:8px">
+        <img src="/mnt/data/ingles.jpeg" alt="thumbnail" class="small-pic" />
+        <span class="muted">Presentation by: Juan Pablo</span>
+      </div>
+    </div>
+
+    <p class="footer-note">Simple English slides to explain Zoom's business model canvas. (Images are illustrative.)</p>
+  </div>
+</body>
+</html>
+```
