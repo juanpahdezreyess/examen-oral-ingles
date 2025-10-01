@@ -1,282 +1,1001 @@
-```html
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Zoom — Business Model Canvas (Simple English)</title>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Business Model Canvas: Zoom | Interactive Analysis</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
   <style>
-    :root{
-      --bg: #0e1524;
-      --card: #101a2c;
-      --muted:#9aa4b2;
-      --accent:#3b82f6;
-      --glass: rgba(255,255,255,0.03);
+    :root {
+      --bg: #f8f9fa;
+      --card: #ffffff;
+      --muted: #6c757d;
+      --accent-1: #4cd964; /* Lime green */
+      --accent-2: #5ac8fa; /* Light blue */
+      --accent-3: #ffcc00; /* Yellow */
+      --accent-4: #af52de; /* Soft purple */
+      --accent-5: #ff3b30; /* Red for contrast */
+      --glass: rgba(255, 255, 255, 0.7);
+      --shadow: rgba(0, 0, 0, 0.1);
     }
-    *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%;width:100%;overflow-x:hidden}
-    body{
-      background: linear-gradient(180deg,#071029 0%, #0b1630 60%);
-      color:#e6eef6;
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      -webkit-font-smoothing:antialiased;
-      line-height:1.5;
-      min-height:100vh;
-      padding:12px;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
-    .container{max-width:1100px;margin:18px auto;padding:12px}
-    header{
-      display:flex;gap:14px;align-items:center;background:var(--card);padding:16px;border-radius:12px;
-      box-shadow:0 6px 24px rgba(0,0,0,0.5);
-      flex-direction:column;text-align:center;
+    body {
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+      color: #2c3e50;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
+      min-height: 100vh;
     }
-    @media(min-width:600px){
-      header{flex-direction:row;text-align:left;padding:20px;border-radius:16px}
+    .container {
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 12px;
     }
-    .logo{
-      width:72px;height:72px;border-radius:12px;
-      background:linear-gradient(135deg,var(--accent),#2563eb);
-      display:flex;align-items:center;justify-content:center;
-      font-weight:800;color:#fff;font-size:32px;flex-shrink:0;
-      box-shadow:0 6px 20px rgba(59,130,246,0.2);
+    @media (min-width: 768px) {
+      .container {
+        max-width: 1080px;
+        padding: 24px;
+        margin: 20px auto;
+      }
     }
-    .title h1{font-size:20px;margin-bottom:6px}
-    .title p{color:var(--muted);font-size:13px;margin-top:2px}
-
-    /* Layout: top grid similar to canvas but as presentation cards */
-    .grid{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap:16px;
-      margin-top:16px;
+    header {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      background: var(--card);
+      padding: 16px;
+      border-radius: 16px;
+      box-shadow: 0 8px 25px var(--shadow);
+      flex-direction: column;
+      text-align: center;
+      margin-bottom: 16px;
+      border-left: 6px solid var(--accent-1);
     }
-    @media(min-width:900px){
-      .grid{
-        grid-template-columns: 1fr 1fr;
-        grid-auto-rows: minmax(160px, auto);
+    @media (min-width: 480px) {
+      header {
+        flex-direction: row;
+        text-align: left;
+        gap: 16px;
+      }
+    }
+    @media (min-width: 768px) {
+      header {
+        padding: 24px;
+        border-radius: 20px;
+        margin-bottom: 24px;
+      }
+    }
+    .logo {
+      width: 60px;
+      height: 60px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 15px rgba(76, 217, 100, 0.3);
+      font-size: 24px;
+      font-weight: bold;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    @media (min-width: 480px) {
+      .logo {
+        width: 70px;
+        height: 70px;
+        font-size: 28px;
+      }
+    }
+    @media (min-width: 768px) {
+      .logo {
+        width: 80px;
+        height: 80px;
+        font-size: 32px;
+      }
+    }
+    h1 {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1.3;
+      word-wrap: break-word;
+      background: linear-gradient(90deg, var(--accent-4), var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    @media (min-width: 480px) {
+      h1 {
+        font-size: 24px;
+      }
+    }
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 32px;
+      }
+    }
+    p.lead {
+      color: var(--muted);
+      margin: 6px 0 0;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+    @media (min-width: 480px) {
+      p.lead {
+        font-size: 15px;
+      }
+    }
+    @media (min-width: 768px) {
+      p.lead {
+        margin: 8px 0 20px;
+        font-size: 16px;
+      }
+    }
+    .card {
+      background: var(--card);
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px var(--shadow);
+      border: 1px solid rgba(255,255,255,0.8);
+      margin-bottom: 20px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+    @media (min-width: 768px) {
+      .card {
+        padding: 28px;
+        border-radius: 20px;
+        margin-bottom: 28px;
+      }
+    }
+    .grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    @media (min-width: 900px) {
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 320px;
+        gap: 28px;
+      }
+    }
+    h2 {
+      margin: 0 0 12px;
+      font-size: 20px;
+      color: #2c3e50;
+      line-height: 1.3;
+    }
+    @media (min-width: 480px) {
+      h2 {
+        font-size: 22px;
+      }
+    }
+    @media (min-width: 768px) {
+      h2 {
+        font-size: 26px;
+        margin: 0 0 16px;
+      }
+    }
+    .muted {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    @media (min-width: 480px) {
+      .muted {
+        font-size: 15px;
+      }
+    }
+    @media (min-width: 768px) {
+      .muted {
+        font-size: 16px;
+      }
+    }
+    .badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 20px;
+      background: var(--glass);
+      color: var(--accent-4);
+      font-weight: 600;
+      border: 1px solid rgba(175, 82, 222, 0.2);
+      text-transform: uppercase;
+      font-size: 12px;
+      margin-top: 8px;
+      box-shadow: 0 4px 10px rgba(175, 82, 222, 0.15);
+    }
+    @media (min-width: 480px) {
+      .badge {
+        padding: 10px 16px;
+        font-size: 13px;
+      }
+    }
+    @media (min-width: 768px) {
+      .badge {
+        padding: 12px 18px;
+        font-size: 14px;
+        margin-top: 0;
+      }
+    }
+    .verify {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+    @media (min-width: 768px) {
+      .verify {
+        gap: 12px;
+        margin-top: 12px;
+      }
+    }
+    .pill {
+      padding: 8px 14px;
+      border-radius: 20px;
+      background: var(--glass);
+      border: 1px solid rgba(255,255,255,0.8);
+      font-weight: 600;
+      color: #2c3e50;
+      font-size: 13px;
+      white-space: nowrap;
+      box-shadow: 0 4px 10px var(--shadow);
+    }
+    @media (min-width: 480px) {
+      .pill {
+        padding: 10px 16px;
+        font-size: 14px;
+      }
+    }
+    @media (min-width: 768px) {
+      .pill {
+        padding: 12px 18px;
+        font-size: 15px;
+      }
+    }
+    footer {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+      padding: 0 8px;
+    }
+    @media (min-width: 480px) {
+      footer {
+        font-size: 14px;
+      }
+    }
+    @media (min-width: 768px) {
+      footer {
+        margin-top: 28px;
+        font-size: 15px;
+      }
+    }
+    .download {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 14px 20px;
+      border-radius: 14px;
+      background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(76, 217, 100, 0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
+      font-size: 15px;
+      width: 100%;
+      text-align: center;
+      border: none;
+      cursor: pointer;
+    }
+    @media (min-width: 480px) {
+      .download {
+        padding: 14px 20px;
+        font-size: 16px;
+        border-radius: 16px;
+      }
+    }
+    @media (min-width: 768px) {
+      .download {
+        padding: 16px 24px;
+        border-radius: 18px;
+        box-shadow: 0 8px 25px rgba(76, 217, 100, 0.4);
+        font-size: 16px;
+        width: auto;
+      }
+    }
+    .download:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(76, 217, 100, 0.6);
+    }
+    .download:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none;
+    }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+    @media (min-width: 480px) {
+      .card-header {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+    ul.muted {
+      padding-left: 20px;
+      margin-top: 12px;
+    }
+    ul.muted li {
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+    @media (min-width: 768px) {
+      ul.muted {
+        padding-left: 24px;
+        margin-top: 16px;
+      }
+      ul.muted li {
+        margin-bottom: 10px;
+      }
+    }
+    
+    /* Asegurar que todo quede dentro del viewport */
+    html, body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+    
+    /* Prevenir desbordamiento horizontal */
+    .container, header, .card, table, .math, pre {
+      max-width: 100%;
+    }
+    
+    /* Ajustes específicos para pantallas muy pequeñas */
+    @media (max-width: 360px) {
+      .container {
+        padding: 10px;
+      }
+      header {
+        padding: 14px;
+      }
+      .card {
+        padding: 16px;
+      }
+      h1 {
+        font-size: 20px;
+      }
+      h2 {
+        font-size: 18px;
+      }
+      .pill {
+        padding: 8px 12px;
+        font-size: 12px;
       }
     }
 
-    .card{
-      background:var(--card);padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);
-      box-shadow:0 6px 20px rgba(0,0,0,0.45);
-      overflow:hidden;
+    .loading {
+      display: none;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 14px;
     }
-    .card h2{margin-bottom:8px;font-size:16px}
-    .muted{color:var(--muted);font-size:13px}
-    .card .icon{
-      position:absolute;right:18px;top:14px;opacity:0.9;
+    
+    .step-explanation {
+      background: rgba(255,255,255,0.5);
+      padding: 14px;
+      border-radius: 12px;
+      margin: 12px 0;
+      border-left: 4px solid var(--accent-3);
+      font-size: 14px;
+      box-shadow: 0 4px 10px var(--shadow);
     }
-    .card-wrap{position:relative}
-
-    /* Big central value card spans both columns on wide screens */
-    .value{
-      grid-column:1 / -1;
+    
+    .canvas-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 20px;
     }
-
-    ul.simple{padding-left:18px;margin-top:8px}
-    ul.simple li{margin-bottom:8px}
-
-    .image-hero{
-      width:100%;height:auto;border-radius:10px;margin-top:12px;border:1px solid rgba(255,255,255,0.04);
+    
+    @media (min-width: 768px) {
+      .canvas-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
     }
-
-    .footer-note{color:var(--muted);font-size:12px;text-align:center;margin-top:16px}
-
-    /* Presentation controls */
-    .controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-    .btn{
-      background:linear-gradient(90deg,var(--accent),#2563eb);color:#fff;padding:10px 14px;border-radius:10px;
-      font-weight:700;border:none;cursor:pointer;text-decoration:none;display:inline-block;
-      box-shadow:0 6px 18px rgba(59,130,246,0.18)
+    
+    .canvas-item {
+      background: var(--glass);
+      padding: 18px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.8);
+      box-shadow: 0 4px 15px var(--shadow);
+      transition: transform 0.3s;
     }
-    .small-pic{width:40px;height:40px;border-radius:8px;object-fit:cover;border:1px solid rgba(255,255,255,0.04)}
+    .canvas-item:hover {
+      transform: translateY(-3px);
+    }
+    
+    .canvas-item h3 {
+      color: var(--accent-4);
+      margin-bottom: 10px;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .canvas-item h3:before {
+      content: "•";
+      color: var(--accent-1);
+      font-size: 24px;
+    }
+    
+    .zoom-image {
+      width: 100%;
+      border-radius: 14px;
+      margin: 16px 0;
+      overflow: hidden;
+      box-shadow: 0 8px 20px var(--shadow);
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    .nav-buttons {
+      display: flex;
+      gap: 12px;
+      margin: 20px 0;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .nav-button {
+      padding: 12px 20px;
+      border-radius: 14px;
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.8);
+      color: #2c3e50;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-weight: 600;
+      box-shadow: 0 4px 10px var(--shadow);
+    }
+    
+    .nav-button:hover {
+      background: var(--accent-2);
+      color: white;
+      transform: translateY(-3px);
+    }
+    
+    .nav-button.active {
+      background: var(--accent-1);
+      color: white;
+      border-color: var(--accent-1);
+    }
+    
+    .section {
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .section.active {
+      display: block;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      background: var(--glass);
+      font-size: 14px;
+      min-width: 280px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px var(--shadow);
+    }
+    @media (min-width: 480px) {
+      table {
+        font-size: 15px;
+      }
+    }
+    @media (min-width: 768px) {
+      table {
+        font-size: 16px;
+        margin-top: 20px;
+      }
+    }
+    td, th {
+      padding: 12px 16px;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      text-align: left;
+      word-wrap: break-word;
+    }
+    @media (min-width: 480px) {
+      td, th {
+        padding: 14px 18px;
+      }
+    }
+    @media (min-width: 768px) {
+      td, th {
+        padding: 16px 20px;
+      }
+    }
+    th {
+      background: rgba(76, 217, 100, 0.1);
+      font-weight: 600;
+      color: var(--accent-1);
+    }
+    
+    .color-accent-1 { color: var(--accent-1); }
+    .color-accent-2 { color: var(--accent-2); }
+    .color-accent-3 { color: var(--accent-3); }
+    .color-accent-4 { color: var(--accent-4); }
+    
+    .bg-accent-1 { background: rgba(76, 217, 100, 0.1); }
+    .bg-accent-2 { background: rgba(90, 200, 250, 0.1); }
+    .bg-accent-3 { background: rgba(255, 204, 0, 0.1); }
+    .bg-accent-4 { background: rgba(175, 82, 222, 0.1); }
+    
+    .preload-images {
+      display: none;
+    }
   </style>
 </head>
 <body>
+  <!-- Preload images for faster loading -->
+  <div class="preload-images">
+    <img src="https://images.unsplash.com/photo-1587560699334-cc4ff634909a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Zoom meeting">
+    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Business partnerships">
+    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Team collaboration">
+    <img src="https://images.unsplash.com/photo-1551836026-d5c55ac8fdc4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Customer relationships">
+    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Technology infrastructure">
+    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Zoom interface">
+  </div>
+
   <div class="container">
     <header>
       <div class="logo">Z</div>
-      <div class="title">
-        <h1>Zoom — Business Model Canvas (Simple English)</h1>
-        <p class="muted">Short and clear slides about Zoom's business model. Images and simple English.</p>
+      <div>
+        <h1>Business Model Canvas: Zoom Video Communications</h1>
+        <p class="lead">Interactive analysis of Zoom's business model using the Business Model Canvas framework</p>
       </div>
     </header>
 
-    <!-- Hero image (provided by user) -->
-    <div style="margin-top:14px">
-      <!-- the developer provided image path: /mnt/data/ingles.jpeg -->
-      <img src="/mnt/data/ingles.jpeg" alt="Business Model Canvas" class="image-hero" />
+    <div class="nav-buttons">
+      <button class="nav-button active" data-section="overview">Overview</button>
+      <button class="nav-button" data-section="partnerships">Partnerships</button>
+      <button class="nav-button" data-section="activities">Activities</button>
+      <button class="nav-button" data-section="value">Value Proposition</button>
+      <button class="nav-button" data-section="customers">Customers</button>
+      <button class="nav-button" data-section="resources">Resources</button>
     </div>
 
-    <!-- Grid of cards (presentation style) -->
     <div class="grid">
+      <main>
+        <!-- Overview Section -->
+        <section id="overview" class="section active">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h2>Zoom Business Model Canvas - Overview</h2>
+                <p class="muted">Zoom Video Communications provides a video-first communications platform that connects people through frictionless video, voice, chat, and content sharing.</p>
+              </div>
+              <div class="badge">SaaS Platform</div>
+            </div>
+            
+            <img class="zoom-image" src="https://images.unsplash.com/photo-1587560699334-cc4ff634909a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Zoom meeting interface">
+            
+            <p class="muted">Founded in 2011 by Eric Yuan, Zoom became essential during the COVID-19 pandemic, growing from 10 million daily meeting participants in December 2019 to over 300 million by April 2020.</p>
+            
+            <div class="canvas-grid">
+              <div class="canvas-item bg-accent-1">
+                <h3 class="color-accent-1">Key Partnerships</h3>
+                <ul class="muted">
+                  <li>Hardware partners (Poly, Logitech)</li>
+                  <li>Integration partners (Slack, Salesforce)</li>
+                  <li>Resellers and distributors</li>
+                  <li>Carriers and telecom providers</li>
+                </ul>
+              </div>
+              
+              <div class="canvas-item bg-accent-2">
+                <h3 class="color-accent-2">Key Activities</h3>
+                <ul class="muted">
+                  <li>Platform development and maintenance</li>
+                  <li>Customer support and success</li>
+                  <li>Sales and marketing</li>
+                  <li>Infrastructure management</li>
+                </ul>
+              </div>
+              
+              <div class="canvas-item bg-accent-3">
+                <h3 class="color-accent-3">Value Propositions</h3>
+                <ul class="muted">
+                  <li>Easy-to-use video conferencing</li>
+                  <li>Reliable and high-quality service</li>
+                  <li>Free basic plan with paid upgrades</li>
+                  <li>Cross-platform compatibility</li>
+                </ul>
+              </div>
+              
+              <div class="canvas-item bg-accent-4">
+                <h3 class="color-accent-4">Customer Relationships</h3>
+                <ul class="muted">
+                  <li>Self-service free tier</li>
+                  <li>Dedicated account managers for enterprise</li>
+                  <li>Online support and community</li>
+                  <li>Educational resources and training</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
 
-      <!-- Key Partnerships -->
-      <div class="card card-wrap">
-        <h2>Key Partnerships</h2>
-        <svg class="icon" width="34" height="34" viewBox="0 0 24 24" fill="none" aria-hidden>
-          <path d="M4 12c0-1.657 1.343-3 3-3h4" stroke="#9aa4b2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M20 12c0 1.657-1.343 3-3 3h-4" stroke="#9aa4b2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="7" cy="9" r="1.6" fill="#9aa4b2"/>
-          <circle cx="17" cy="15" r="1.6" fill="#9aa4b2"/>
-        </svg>
-        <p class="muted">Zoom works with partners to keep service reliable and fast.</p>
-        <ul class="simple muted">
-          <li>Cloud providers (data centers)</li>
-          <li>Hardware makers (cameras, microphones)</li>
-          <li>Integration partners (Slack, Microsoft)</li>
-          <li>Security & compliance vendors</li>
+        <!-- Key Partnerships Section -->
+        <section id="partnerships" class="section">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h2>Key Partnerships</h2>
+                <p class="muted">Zoom collaborates with various partners to enhance its platform and expand its market reach.</p>
+              </div>
+              <div class="badge">Strategic Alliances</div>
+            </div>
+            
+            <img class="zoom-image" src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Business partnerships">
+            
+            <div class="step-explanation">
+              <strong>Explanation:</strong> Partnerships help Zoom integrate with other tools, expand functionality, and reach new customer segments.
+            </div>
+            
+            <table>
+              <tr>
+                <th>Partner Type</th>
+                <th>Examples</th>
+                <th>Purpose</th>
+              </tr>
+              <tr>
+                <td>Hardware Partners</td>
+                <td>Poly, Logitech, Yealink</td>
+                <td>Ensure compatibility with conference room equipment</td>
+              </tr>
+              <tr>
+                <td>Software Integration</td>
+                <td>Slack, Salesforce, Dropbox</td>
+                <td>Embed Zoom in workflows and increase utility</td>
+              </tr>
+              <tr>
+                <td>Carriers</td>
+                <td>AT&T, Verizon</td>
+                <td>Improve call quality and reliability</td>
+              </tr>
+              <tr>
+                <td>Resellers</td>
+                <td>Various IT consultants</td>
+                <td>Expand market reach to SMBs</td>
+              </tr>
+            </table>
+          </div>
+        </section>
+
+        <!-- Key Activities Section -->
+        <section id="activities" class="section">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h2>Key Activities</h2>
+                <p class="muted">The most important activities Zoom performs to make its business model work.</p>
+              </div>
+              <div class="badge">Core Operations</div>
+            </div>
+            
+            <img class="zoom-image" src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Team collaboration">
+            
+            <ul class="muted">
+              <li><strong>Platform Development:</strong> Continuous improvement of video, audio, and collaboration features</li>
+              <li><strong>Infrastructure Management:</strong> Maintaining global data centers for reliable service</li>
+              <li><strong>Customer Support:</strong> Providing help through various channels (chat, phone, community)</li>
+              <li><strong>Sales & Marketing:</strong> Acquiring new customers and retaining existing ones</li>
+              <li><strong>Security & Compliance:</strong> Ensuring data protection and meeting regulatory requirements</li>
+            </ul>
+            
+            <div class="step-explanation">
+              <strong>Key Insight:</strong> Zoom's focus on a simple, reliable user experience has been central to its success against established competitors.
+            </div>
+          </div>
+        </section>
+
+        <!-- Value Propositions Section -->
+        <section id="value" class="section">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h2>Value Propositions</h2>
+                <p class="muted">What makes Zoom attractive to different customer segments.</p>
+              </div>
+              <div class="badge">Customer Benefits</div>
+            </div>
+            
+            <img class="zoom-image" src="https://images.unsplash.com/photo-1551836026-d5c55ac8fdc4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Happy users in a Zoom meeting">
+            
+            <div class="canvas-grid">
+              <div class="canvas-item bg-accent-1">
+                <h3 class="color-accent-1">For Individual Users</h3>
+                <ul class="muted">
+                  <li>Free 40-minute group meetings</li>
+                  <li>Easy to use - no training required</li>
+                  <li>Works on any device</li>
+                  <li>Reliable connection</li>
+                </ul>
+              </div>
+              
+              <div class="canvas-item bg-accent-2">
+                <h3 class="color-accent-2">For Businesses</h3>
+                <ul class="muted">
+                  <li>Scalable for organizations of any size</li>
+                  <li>Administrative controls and reporting</li>
+                  <li>Integration with business tools</li>
+                  <li>Enhanced security features</li>
+                </ul>
+              </div>
+              
+              <div class="canvas-item bg-accent-3">
+                <h3 class="color-accent-3">For Developers</h3>
+                <ul class="muted">
+                  <li>APIs and SDKs for customization</li>
+                  <li>Documentation and support</li>
+                  <li>Marketplace for apps</li>
+                </ul>
+              </div>
+              
+              <div class="canvas-item bg-accent-4">
+                <h3 class="color-accent-4">For Education</h3>
+                <ul class="muted">
+                  <li>Special pricing for schools</li>
+                  <li>Classroom management features</li>
+                  <li>Secure environment for minors</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Customer Segments & Relationships Section -->
+        <section id="customers" class="section">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h2>Customer Segments & Relationships</h2>
+                <p class="muted">Who Zoom serves and how they build relationships with these customers.</p>
+              </div>
+              <div class="badge">Market Focus</div>
+            </div>
+            
+            <img class="zoom-image" src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Different types of Zoom users">
+            
+            <h3>Customer Segments</h3>
+            <table>
+              <tr>
+                <th>Segment</th>
+                <th>Characteristics</th>
+                <th>Zoom's Approach</th>
+              </tr>
+              <tr>
+                <td>Individual Users</td>
+                <td>Free users, personal meetings</td>
+                <td>Freemium model, easy onboarding</td>
+              </tr>
+              <tr>
+                <td>Small Businesses</td>
+                <td>1-50 employees, cost-sensitive</td>
+                <td>Affordable Pro plans</td>
+              </tr>
+              <tr>
+                <td>Enterprises</td>
+                <td>Large organizations, security needs</td>
+                <td>Custom plans, dedicated support</td>
+              </tr>
+              <tr>
+                <td>Education</td>
+                <td>Schools, universities, students</td>
+                <td>Special education pricing</td>
+              </tr>
+              <tr>
+                <td>Healthcare</td>
+                <td>Doctors, patients, HIPAA compliance</td>
+                <td>Zoom for Healthcare</td>
+              </tr>
+            </table>
+            
+            <h3 style="margin-top: 20px;">Customer Relationships</h3>
+            <ul class="muted">
+              <li><strong>Self-Service:</strong> Free users can sign up and use Zoom without sales interaction</li>
+              <li><strong>Automated Support:</strong> Knowledge base, community forums, and chatbots</li>
+              <li><strong>Personal Assistance:</strong> Dedicated account managers for enterprise customers</li>
+              <li><strong>Co-creation:</strong> Feedback channels and user groups for product improvement</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Key Resources Section -->
+        <section id="resources" class="section">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h2>Key Resources</h2>
+                <p class="muted">The most important assets required to make Zoom's business model work.</p>
+              </div>
+              <div class="badge">Strategic Assets</div>
+            </div>
+            
+            <img class="zoom-image" src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Zoom's technology infrastructure">
+            
+            <div class="canvas-grid">
+              <div class="canvas-item bg-accent-1">
+                <h3 class="color-accent-1">Physical Resources</h3>
+                <ul class="muted">
+                  <li>Global data center infrastructure</li>
+                  <li>Office spaces worldwide</li>
+                  <li>Network equipment</li>
+                </ul>
+              </div>
+              
+              <div class="canvas-item bg-accent-2">
+                <h3 class="color-accent-2">Intellectual Resources</h3>
+                <ul class="muted">
+                  <li>Proprietary video compression technology</li>
+                  <li>Software patents</li>
+                  <li>Brand and trademarks</li>
+                </ul>
+              </div>
+              
+              <div class="canvas-item bg-accent-3">
+                <h3 class="color-accent-3">Human Resources</h3>
+                <ul class="muted">
+                  <li>Software engineers and developers</li>
+                  <li>Sales and marketing teams</li>
+                  <li>Customer support staff</li>
+                </ul>
+              </div>
+              
+              <div class="canvas-item bg-accent-4">
+                <h3 class="color-accent-4">Financial Resources</h3>
+                <ul class="muted">
+                  <li>Venture capital funding (initially)</li>
+                  <li>IPO proceeds</li>
+                  <li>Operating cash flow</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="step-explanation">
+              <strong>Key Insight:</strong> Zoom's proprietary video technology and scalable infrastructure are its most valuable resources, enabling reliable service at massive scale.
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <aside class="toc card">
+        <h2>Business Model Canvas</h2>
+        <div class="verify">
+          <div class="pill bg-accent-1">Partnerships</div>
+          <div class="pill bg-accent-2">Activities</div>
+          <div class="pill bg-accent-3">Value Prop</div>
+          <div class="pill bg-accent-4">Customers</div>
+          <div class="pill" style="background: rgba(255, 59, 48, 0.1); color: #ff3b30;">Resources</div>
+        </div>
+
+        <h2 style="margin-top:20px">Zoom Key Facts</h2>
+        <ul class="muted">
+          <li>Founded: 2011</li>
+          <li>IPO: 2019 (NASDAQ: ZM)</li>
+          <li>Users: 300M+ daily participants</li>
+          <li>Revenue Model: Freemium SaaS</li>
+          <li>CEO: Eric Yuan</li>
         </ul>
-      </div>
 
-      <!-- Key Activities -->
-      <div class="card card-wrap">
-        <h2>Key Activities</h2>
-        <svg class="icon" width="34" height="34" viewBox="0 0 24 24" fill="none">
-          <path d="M3 12h18" stroke="#9aa4b2" stroke-width="1.6" stroke-linecap="round"/>
-          <path d="M12 3v18" stroke="#9aa4b2" stroke-width="1.6" stroke-linecap="round"/>
-        </svg>
-        <p class="muted">Main things Zoom does every day.</p>
-        <ul class="simple muted">
-          <li>Run and improve video conferencing platform</li>
-          <li>Keep servers and networks fast</li>
-          <li>Update apps and add features</li>
-          <li>Support customers and security</li>
+        <h2 style="margin-top:20px">Revenue Streams</h2>
+        <ul class="muted">
+          <li>Subscription plans (Pro, Business, Enterprise)</li>
+          <li>Zoom Phone services</li>
+          <li>Zoom Rooms hardware</li>
+          <li>Developer platform</li>
+          <li>Zoom for Healthcare/Education</li>
         </ul>
-      </div>
-
-      <!-- Key Resources -->
-      <div class="card card-wrap">
-        <h2>Key Resources</h2>
-        <svg class="icon" width="34" height="34" viewBox="0 0 24 24" fill="none">
-          <rect x="3" y="6" width="18" height="12" rx="2" stroke="#9aa4b2" stroke-width="1.6"/>
-          <circle cx="12" cy="12" r="2" fill="#9aa4b2"/>
-        </svg>
-        <p class="muted">What Zoom needs to run the product.</p>
-        <ul class="simple muted">
-          <li>Global server network (cloud)</li>
-          <li>Skilled engineers and support team</li>
-          <li>Software code and patents</li>
-          <li>Brand and large user base</li>
+        
+        <h2 style="margin-top:20px">Cost Structure</h2>
+        <ul class="muted">
+          <li>R&D (largest expense)</li>
+          <li>Infrastructure & data centers</li>
+          <li>Sales & marketing</li>
+          <li>General & administrative</li>
+          <li>Customer support</li>
         </ul>
-      </div>
 
-      <!-- Value Propositions (central, spans columns) -->
-      <div class="card value card-wrap">
-        <h2>Value Propositions</h2>
-        <svg class="icon" width="34" height="34" viewBox="0 0 24 24" fill="none">
-          <path d="M12 3v18" stroke="#9aa4b2" stroke-width="1.6" stroke-linecap="round"/>
-          <path d="M3 12h18" stroke="#9aa4b2" stroke-width="1.6" stroke-linecap="round"/>
-        </svg>
-        <p class="muted">Simple reasons customers choose Zoom.</p>
-        <ul class="simple muted">
-          <li>Easy to use video calls and meetings</li>
-          <li>Works on many devices (phone, PC, tablet)</li>
-          <li>Good quality even on slow internet</li>
-          <li>Free basic plan and paid plans for businesses</li>
-          <li>Integrations with other work tools</li>
-        </ul>
-      </div>
-
-      <!-- Customer Relationships -->
-      <div class="card card-wrap">
-        <h2>Customer Relationships</h2>
-        <svg class="icon" width="34" height="34" viewBox="0 0 24 24" fill="none">
-          <path d="M12 5a3 3 0 0 1 0 6 3 3 0 0 1 0-6z" stroke="#9aa4b2" stroke-width="1.6"/>
-          <path d="M5 19a7 7 0 0 1 14 0" stroke="#9aa4b2" stroke-width="1.6"/>
-        </svg>
-        <p class="muted">How Zoom connects with users.</p>
-        <ul class="simple muted">
-          <li>Self-service (easy sign up)</li>
-          <li>Online help and tutorials</li>
-          <li>Business support plans</li>
-          <li>Community and developer resources</li>
-        </ul>
-      </div>
-
-      <!-- Channels -->
-      <div class="card card-wrap">
-        <h2>Channels</h2>
-        <svg class="icon" width="34" height="34" viewBox="0 0 24 24" fill="none">
-          <path d="M3 7h18v10H3z" stroke="#9aa4b2" stroke-width="1.6" stroke-linejoin="round"/>
-          <path d="M8 12h8" stroke="#9aa4b2" stroke-width="1.6" stroke-linecap="round"/>
-        </svg>
-        <p class="muted">Ways users get Zoom.</p>
-        <ul class="simple muted">
-          <li>Zoom website (download apps)</li>
-          <li>App stores (iOS, Android)</li>
-          <li>Business sales & resellers</li>
-          <li>Integrations inside other apps</li>
-        </ul>
-      </div>
-
-      <!-- Customer Segments -->
-      <div class="card card-wrap">
-        <h2>Customer Segments</h2>
-        <svg class="icon" width="34" height="34" viewBox="0 0 24 24" fill="none">
-          <circle cx="8" cy="10" r="2" stroke="#9aa4b2" stroke-width="1.6"/>
-          <circle cx="16" cy="14" r="2" stroke="#9aa4b2" stroke-width="1.6"/>
-        </svg>
-        <p class="muted">Who uses Zoom?</p>
-        <ul class="simple muted">
-          <li>Individual users (friends, families)</li>
-          <li>Small businesses and teams</li>
-          <li>Large enterprises and schools</li>
-          <li>Developers and integrators</li>
-        </ul>
-      </div>
-
-      <!-- Cost Structure (wide bottom) -->
-      <div class="card card-wrap" style="grid-column:1/-1;">
-        <h2>Cost Structure</h2>
-        <svg class="icon" width="34" height="34" viewBox="0 0 24 24" fill="none">
-          <path d="M6 12h12" stroke="#9aa4b2" stroke-width="1.6" stroke-linecap="round"/>
-          <path d="M12 6v12" stroke="#9aa4b2" stroke-width="1.6" stroke-linecap="round"/>
-        </svg>
-        <p class="muted">Main costs for Zoom to run the service.</p>
-        <ul class="simple muted">
-          <li>Server and cloud costs</li>
-          <li>Engineering and product teams</li>
-          <li>Customer support and sales</li>
-          <li>Marketing and security/compliance</li>
-        </ul>
-      </div>
-
-      <!-- Revenue Streams (also wide bottom) -->
-      <div class="card card-wrap" style="grid-column:1/-1;">
-        <h2>Revenue Streams</h2>
-        <svg class="icon" width="34" height="34" viewBox="0 0 24 24" fill="none">
-          <path d="M12 3v18" stroke="#9aa4b2" stroke-width="1.6" stroke-linecap="round"/>
-          <path d="M6 8h12" stroke="#9aa4b2" stroke-width="1.6" stroke-linecap="round"/>
-        </svg>
-        <p class="muted">How Zoom makes money.</p>
-        <ul class="simple muted">
-          <li>Paid subscriptions (Pro, Business, Enterprise)</li>
-          <li>Zoom Phone and add-on services</li>
-          <li>Hardware sales and certified partners</li>
-          <li>Marketplace integrations and platform fees</li>
-        </ul>
-      </div>
-
+        <button class="download" id="downloadBtn">
+          📊 Download Full Analysis
+        </button>
+        <div class="loading" id="loadingText">Preparing comprehensive report...</div>
+      </aside>
     </div>
 
-    <div class="controls">
-      <a class="btn" href="https://zoom.us" target="_blank" rel="noopener">Visit Zoom (official)</a>
-      <a class="btn" href="#" onclick="alert('This is a demo presentation. Use print or save as PDF.');return false;">Save as PDF (browser)</a>
-      <div style="margin-left:auto;display:flex;align-items:center;gap:8px">
-        <img src="/mnt/data/ingles.jpeg" alt="thumbnail" class="small-pic" />
-        <span class="muted">Presentation by: Juan Pablo</span>
-      </div>
-    </div>
-
-    <p class="footer-note">Simple English slides to explain Zoom's business model canvas. (Images are illustrative.)</p>
+    <footer>
+      <p>Business Model Canvas Analysis: Zoom Video Communications</p>
+    </footer>
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      // Preload images for faster loading
+      const imageUrls = [
+        'https://images.unsplash.com/photo-1587560699334-cc4ff634909a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+        'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+        'https://images.unsplash.com/photo-1551836026-d5c55ac8fdc4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+      ];
+      
+      imageUrls.forEach(url => {
+        const img = new Image();
+        img.src = url;
+      });
+      
+      // Navigation functionality
+      const navButtons = document.querySelectorAll('.nav-button');
+      const sections = document.querySelectorAll('.section');
+      
+      navButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const targetSection = this.getAttribute('data-section');
+          
+          // Update active button
+          navButtons.forEach(btn => btn.classList.remove('active'));
+          this.classList.add('active');
+          
+          // Show target section
+          sections.forEach(section => {
+            section.classList.remove('active');
+            if (section.id === targetSection) {
+              section.classList.add('active');
+            }
+          });
+        });
+      });
+      
+      // Download button functionality
+      var btn = document.getElementById('downloadBtn');
+      var loadingText = document.getElementById('loadingText');
+      
+      btn.addEventListener('click', function(e){
+        e.preventDefault();
+        btn.disabled = true;
+        loadingText.style.display = 'block';
+        btn.textContent = '⏳ Preparing...';
+        
+        // Simulate download preparation
+        setTimeout(function() {
+          alert('Download would start here. In a real implementation, this would generate a PDF report.');
+          btn.disabled = false;
+          loadingText.style.display = 'none';
+          btn.textContent = '📊 Download Full Analysis';
+        }, 1500);
+      });
+    });
+  </script>
 </body>
 </html>
-```
