@@ -1,288 +1,94 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Solar Panel Value Proposition Presentation</title>
-    <style>
-        /* General Presentation Styles for a "Slide" effect */
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: hidden; /* Hide scrollbars for presentation mode */
-            background-color: #333; /* Dark background behind the slide */
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #333;
-        }
+export default function SolarValueProposition() {
+  return (
+    <div className="w-screen h-screen bg-gradient-to-br from-slate-900 to-slate-800 text-white flex flex-col items-center justify-center p-10">
+      <h1 className="text-5xl font-bold mb-12 tracking-tight text-center">
+        AI Powered Solar Panels — Customer Profile & Fit
+      </h1>
 
-        /* The main container acts as the horizontal slide */
-        #presentation-container {
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+      <div className="grid grid-cols-2 gap-16 w-full max-w-7xl items-center">
+        {/* CUSTOMER PROFILE */}
+        <div className="bg-slate-800/60 backdrop-blur-xl rounded-2xl shadow-2xl p-10 flex flex-col items-center">
+          <h2 className="text-3xl font-semibold mb-8">Customer Profile</h2>
 
-        .slide {
-            background-color: white;
-            width: 95vw; /* Almost full width for horizontal feel */
-            height: calc(95vw * (9 / 16)); /* Maintain 16:9 aspect ratio */
-            max-height: 95vh; /* Don't exceed screen height */
-            position: relative;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-            display: flex;
-            flex-direction: column;
-            padding: 2% 4%;
-            box-sizing: border-box;
-            border-radius: 10px;
-        }
+          <div className="relative w-96 h-96">
+            {/* Circle */}
+            <div className="absolute inset-0 rounded-full border-4 border-white"></div>
 
-        header {
-            text-align: center;
-            margin-bottom: 2%;
-        }
+            {/* Dividing Lines */}
+            <div className="absolute left-1/2 top-0 w-1 h-1/2 bg-white -translate-x-1/2"></div>
+            <div className="absolute left-1/2 top-1/2 w-1 h-1/2 bg-white -translate-x-1/2 rotate-60 origin-top"></div>
+            <div className="absolute left-1/2 top-1/2 w-1 h-1/2 bg-white -translate-x-1/2 -rotate-60 origin-top"></div>
 
-        header h1 {
-            margin: 0;
-            font-size: 3rem;
-            color: #2c3e50;
-            border-bottom: 3px solid #f39c12; /* Solar yellow accent */
-            display: inline-block;
-            padding-bottom: 5px;
-        }
+            {/* JOBS SECTION */}
+            <div className="absolute top-8 left-1/2 -translate-x-1/2 w-56 text-center">
+              <p className="font-bold text-lg mb-2">1. Jobs</p>
+              <p className="text-sm text-slate-300">Reduce electricity costs</p>
+              <p className="text-sm text-slate-300">Generate clean energy</p>
+              <p className="text-sm text-slate-300">Monitor home energy use</p>
+            </div>
 
-        /* Value Proposition Canvas Styles (The Circle) */
-        #value-prop-canvas {
-            flex-grow: 1;
-            display: grid;
-            grid-template-columns: 1fr; /* Central circle */
-            align-items: center;
-            justify-items: center;
-            position: relative;
-        }
+            {/* PAINS SECTION */}
+            <div className="absolute right-4 bottom-24 w-44 text-center">
+              <p className="font-bold text-lg mb-2">2. Pains</p>
+              <p className="text-sm text-slate-300">High installation cost</p>
+              <p className="text-sm text-slate-300">Low efficiency panels</p>
+              <p className="text-sm text-slate-300">Maintenance complexity</p>
+              <p className="text-sm text-slate-300">Energy waste</p>
+            </div>
 
-        /* The Customer Profile Circle */
-        .vpc-circle {
-            width: 80%; /* Adjust size relative to the canvas grid */
-            height: 80%;
-            border-radius: 50%;
-            border: 4px solid #2c3e50;
-            display: grid;
-            grid-template-columns: 50% 50%; /* Left Pains/Gains, Right Jobs */
-            grid-template-rows: 50% 50%;
-            grid-template-areas: 
-                "gains jobs"
-                "pains jobs";
-            overflow: hidden;
-            background-color: #ecf0f1;
-            box-sizing: border-box;
-        }
+            {/* GAINS SECTION */}
+            <div className="absolute left-4 bottom-24 w-44 text-center">
+              <p className="font-bold text-lg mb-2">3. Gains</p>
+              <p className="text-sm text-slate-300">Lower electricity bills</p>
+              <p className="text-sm text-slate-300">Energy independence</p>
+              <p className="text-sm text-slate-300">Smart home integration</p>
+              <p className="text-sm text-slate-300">Environmental impact</p>
+            </div>
+          </div>
+        </div>
 
-        /* Quadrant specific styling */
-        .vpc-quadrant {
-            padding: 10% 8% 5% 8%;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-        }
+        {/* VALUE MAP */}
+        <div className="bg-slate-800/60 backdrop-blur-xl rounded-2xl shadow-2xl p-10 flex flex-col justify-center">
+          <h2 className="text-3xl font-semibold mb-8 text-center">Value Map</h2>
 
-        .vpc-quadrant h2 {
-            margin: 0 0 10px 0;
-            font-size: 1.6rem;
-            border-bottom: 2px solid;
-            padding-bottom: 3px;
-            display: flex;
-            align-items: center;
-        }
+          <div className="space-y-6 text-slate-200 text-lg">
+            <div className="bg-slate-700/50 p-6 rounded-xl">
+              <p className="font-semibold text-white">Products & Services</p>
+              <p>AI-powered solar panels with real-time monitoring, smart energy optimization, and predictive analytics.</p>
+            </div>
 
-        .quadrant-icon {
-            font-weight: bold;
-            margin-right: 8px;
-            font-size: 1.8rem;
-        }
+            <div className="bg-slate-700/50 p-6 rounded-xl">
+              <p className="font-semibold text-white">Pain Relievers</p>
+              <p>Predictive maintenance detects failures early, AI optimizes energy usage, and monitoring dashboards eliminate uncertainty.</p>
+            </div>
 
-        .vpc-quadrant ul {
-            margin: 0;
-            padding-left: 20px;
-            list-style-type: none;
-        }
+            <div className="bg-slate-700/50 p-6 rounded-xl">
+              <p className="font-semibold text-white">Gain Creators</p>
+              <p>Higher solar efficiency, lower electricity bills, smart home integration, and sustainable energy generation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-        .vpc-quadrant li {
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-            position: relative;
-            line-height: 1.4;
-        }
+      {/* FIT ARROWS */}
+      <div className="absolute inset-0 pointer-events-none">
+        <svg className="w-full h-full">
+          <defs>
+            <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L0,6 L9,3 z" fill="white" />
+            </marker>
+          </defs>
 
-        .vpc-quadrant li::before {
-            content: '•';
-            color: #95a5a6;
-            position: absolute;
-            left: -15px;
-        }
+          {/* Jobs -> Products */}
+          <line x1="48%" y1="40%" x2="52%" y2="40%" stroke="white" strokeWidth="3" markerEnd="url(#arrow)" />
 
-        /* Coloring the Quadrants and Titles */
-        .gains-area {
-            grid-area: gains;
-            background-color: rgba(46, 204, 113, 0.1); /* Light Green */
-            color: #27ae60;
-        }
-        .gains-area h2 { border-color: #2ecc71; }
+          {/* Pains -> Pain Relievers */}
+          <line x1="48%" y1="55%" x2="52%" y2="55%" stroke="white" strokeWidth="3" markerEnd="url(#arrow)" />
 
-        .pains-area {
-            grid-area: pains;
-            border-top: 4px solid #2c3e50; /* Divider */
-            background-color: rgba(231, 76, 60, 0.1); /* Light Red */
-            color: #c0392b;
-        }
-        .pains-area h2 { border-color: #e74c3c; }
-
-        .jobs-area {
-            grid-area: jobs;
-            border-left: 4px solid #2c3e50; /* Divider */
-            background-color: rgba(52, 152, 219, 0.1); /* Light Blue */
-            color: #2980b9;
-        }
-        .jobs-area h2 { border-color: #3498db; }
-
-        /* General Label/Icon Styles */
-        .label-style {
-            position: absolute;
-            font-weight: bold;
-            font-size: 2.5rem;
-            color: rgba(0,0,0,0.1);
-        }
-
-        /* SVG Arrow styles for "Fit" connections */
-        #arrows-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none; /* Let clicks pass through */
-        }
-
-        .fit-arrow {
-            fill: none;
-            stroke: #f39c12; /* "Fit" orange */
-            stroke-width: 3;
-            marker-end: url(#arrowhead); /* Connect arrowhead marker */
-        }
-
-        #arrowhead {
-            fill: #f39c12;
-        }
-
-        /* Text Labels for Arrows */
-        .arrow-text {
-            font-size: 1.1rem;
-            fill: #555;
-            font-weight: bold;
-        }
-
-        /* Labels over sections for clarity, like in the reference image */
-        .center-labels {
-            position: absolute;
-            font-size: 3rem;
-            font-weight: bold;
-            color: rgba(0,0,0,0.15);
-        }
-
-    </style>
-</head>
-<body>
-
-<div id="presentation-container">
-    <div class="slide">
-        <header>
-            <h1>AI-Powered Solar Panel: Customer Profile & Fit</h1>
-        </header>
-
-        <main id="value-prop-canvas">
-            <div class="vpc-circle" id="customer-circle">
-                <div class="vpc-quadrant gains-area">
-                    <h2>
-                        <span class="quadrant-icon">📈</span>
-                        3. GAINS
-                    </h2>
-                    <ul>
-                        <li>Energy autonomy (off-grid potential)</li>
-                        <li>Real-time system control & optimization</li>
-                        <li>Maximize long-term financial savings</li>
-                        <li>Contribute to global sustainability</li>
-                        <li>Increased property value</li>
-                    </ul>
-                    <span class="label-style" style="bottom: 10px; left: 10px;">GAINS</span>
-                </div>
-
-                <div class="vpc-quadrant pains-area">
-                    <h2>
-                        <span class="quadrant-icon">😟</span>
-                        2. PAINS
-                    </h2>
-                    <ul>
-                        <li>High initial acquisition & R&D costs</li>
-                        <li>System downtime & repair hassle</li>
-                        <li>Complex monitoring software</li>
-                        <li>Weather unpredictability impact</li>
-                        <li>Financing/loan accessibility concerns</li>
-                    </ul>
-                    <span class="label-style" style="top: 10px; left: 10px;">PAINS</span>
-                </div>
-
-                <div class="vpc-quadrant jobs-area">
-                    <h2>
-                        <span class="quadrant-icon">📋</span>
-                        1. JOBS-TO-BE-DONE
-                    </h2>
-                    <ul>
-                        <li>Generate reliable, clean energy for the home</li>
-                        <li>Monitor & manage daily power consumption</li>
-                        <li>Secure financing for the installation</li>
-                        <li>Transition to sustainable living</li>
-                        <li>Ensure energy security during grid outages</li>
-                    </ul>
-                    <span class="label-style" style="bottom: 10px; right: 10px;">JOBS</span>
-                </div>
-            </div> <svg id="arrows-overlay">
-                <defs>
-                    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-                        <polygon points="0 0, 10 3.5, 0 7" />
-                    </marker>
-                </defs>
-
-                <path d="M 50%, 50% 
-                         L 40%, 42% 
-                         Q 30%, 35% 
-                           25%, 30%" 
-                      class="fit-arrow" />
-                <text x="30%" y="38%" class="arrow-text" style="fill: #27ae60;">Gain Creators < Fit ></text>
-
-                <path d="M 50%, 50% 
-                         L 40%, 58% 
-                         Q 30%, 65% 
-                           25%, 70%" 
-                      class="fit-arrow" />
-                <text x="30%" y="62%" class="arrow-text" style="fill: #c0392b;">Pain Relievers < Fit ></text>
-
-                <path d="M 50%, 50% 
-                         L 60%, 50%
-                         Q 70%, 50% 
-                           78%, 50%" 
-                      class="fit-arrow" />
-                <text x="65%" y="47%" class="arrow-text" style="fill: #2980b9;">Product/Service < Fit ></text>
-
-                <text x="50%" y="90%" text-anchor="middle" font-size="2rem" font-weight="bold" fill="#f39c12">4. THE FIT</text>
-
-            </svg>
-
-        </main>
+          {/* Gains -> Gain Creators */}
+          <line x1="48%" y1="70%" x2="52%" y2="70%" stroke="white" strokeWidth="3" markerEnd="url(#arrow)" />
+        </svg>
+      </div>
     </div>
-</div>
-
-</body>
-</html>
+  );
+}
