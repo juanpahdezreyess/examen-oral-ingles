@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>AI Powered Solar Panels - Customer Profile</title>
+<title>AI Powered Solar Panels – Customer Profile & Fit</title>
 
 <style>
 
@@ -10,88 +10,58 @@ body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
 background:#f4f6fb;
+height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-height:100vh;
 }
 
 .container{
-width:90%;
+width:95%;
 display:flex;
 justify-content:space-between;
 align-items:center;
 }
 
-/* CUSTOMER PROFILE CIRCLE */
+/* TITLE */
+
+.title{
+position:absolute;
+top:20px;
+font-size:34px;
+font-weight:bold;
+}
+
+/* CUSTOMER PROFILE */
 
 .customer-profile{
-position:relative;
-width:520px;
-height:520px;
+width:550px;
+height:550px;
 border-radius:50%;
 border:6px solid #2f4fff;
 background:white;
+display:flex;
+flex-direction:column;
+justify-content:space-evenly;
+align-items:center;
+padding:40px;
+box-sizing:border-box;
 }
-
-/* lines */
-
-.line{
-position:absolute;
-background:#2f4fff;
-transform-origin:center;
-}
-
-.line1{
-width:4px;
-height:260px;
-left:50%;
-top:50%;
-transform:translate(-50%,-100%);
-}
-
-.line2{
-width:4px;
-height:260px;
-left:50%;
-top:50%;
-transform:translate(-50%,0) rotate(120deg);
-}
-
-.line3{
-width:4px;
-height:260px;
-left:50%;
-top:50%;
-transform:translate(-50%,0) rotate(240deg);
-}
-
-/* text sections */
 
 .section{
-position:absolute;
-width:170px;
-font-size:16px;
-}
-
-.jobs{
-top:70px;
-left:170px;
+width:85%;
 text-align:center;
 }
 
-.pains{
-bottom:60px;
-left:60px;
-}
-
-.gains{
-bottom:60px;
-right:60px;
-}
-
 .section h3{
-margin-bottom:8px;
+margin-bottom:10px;
+color:#2f4fff;
+}
+
+.section ul{
+padding-left:20px;
+text-align:left;
+font-size:16px;
 }
 
 /* FIT */
@@ -108,15 +78,15 @@ box-shadow:0 6px 18px rgba(0,0,0,0.12);
 margin-bottom:20px;
 }
 
+.box h3{
+margin-top:0;
+color:#2f4fff;
+}
+
 .arrow{
 text-align:center;
 font-size:36px;
-}
-
-h1{
-position:absolute;
-top:20px;
-font-size:36px;
+margin:10px 0;
 }
 
 </style>
@@ -124,7 +94,7 @@ font-size:36px;
 
 <body>
 
-<h1>AI Powered Solar Panels – Customer Profile & Fit</h1>
+<div class="title">AI Powered Solar Panels – Customer Profile & Fit</div>
 
 <div class="container">
 
@@ -132,42 +102,37 @@ font-size:36px;
 
 <div class="customer-profile">
 
-<div class="line line1"></div>
-<div class="line line2"></div>
-<div class="line line3"></div>
-
-<div class="section jobs">
+<div class="section">
 <h3>1. Jobs</h3>
 <ul>
-<li>Generate renewable energy</li>
-<li>Reduce electricity bills</li>
-<li>Monitor energy usage</li>
-<li>Power smart homes</li>
+<li>Generate renewable electricity for the home</li>
+<li>Reduce monthly energy bills</li>
+<li>Monitor and control energy usage</li>
+<li>Power smart home devices</li>
 </ul>
 </div>
 
-<div class="section pains">
+<div class="section">
 <h3>2. Pains</h3>
 <ul>
 <li>High installation cost</li>
-<li>Energy inefficiency</li>
-<li>Weather variability</li>
-<li>Lack of monitoring</li>
+<li>Energy inefficiency with traditional panels</li>
+<li>Weather affecting energy production</li>
+<li>Lack of real-time monitoring</li>
 </ul>
 </div>
 
-<div class="section gains">
+<div class="section">
 <h3>3. Gains</h3>
 <ul>
-<li>Lower long-term costs</li>
+<li>Lower long-term electricity costs</li>
 <li>Energy independence</li>
-<li>Smart automation</li>
-<li>Sustainable lifestyle</li>
+<li>Smart automation and monitoring</li>
+<li>Reduced carbon footprint</li>
 </ul>
 </div>
 
 </div>
-
 
 <!-- FIT -->
 
@@ -176,10 +141,10 @@ font-size:36px;
 <div class="box">
 <h3>Pain Relievers</h3>
 <ul>
-<li>AI predicts weather and energy demand</li>
-<li>Energy optimization algorithms</li>
-<li>Remote monitoring via app</li>
-<li>Government incentives</li>
+<li>AI predicts weather and adjusts energy optimization</li>
+<li>Smart software improves panel efficiency</li>
+<li>Mobile app for real-time monitoring</li>
+<li>Financing options and incentives reduce cost barriers</li>
 </ul>
 </div>
 
@@ -189,9 +154,9 @@ font-size:36px;
 <h3>Products & Services</h3>
 <ul>
 <li>AI Powered Solar Panels</li>
-<li>Energy monitoring software</li>
+<li>Energy monitoring platform</li>
 <li>Smart battery storage</li>
-<li>IoT energy system</li>
+<li>IoT energy management system</li>
 </ul>
 </div>
 
@@ -201,9 +166,9 @@ font-size:36px;
 <h3>Gain Creators</h3>
 <ul>
 <li>Maximized energy production</li>
-<li>Real-time insights</li>
+<li>Real-time energy insights</li>
 <li>Long-term savings</li>
-<li>Smart energy management</li>
+<li>Smarter energy consumption decisions</li>
 </ul>
 </div>
 
